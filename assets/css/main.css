@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: black;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -111,7 +111,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: black;
+		color: #276fbf;
 		text-decoration: none;
 	}
 
@@ -123,7 +123,7 @@ input, select, textarea {
 
 	strong, b {
 		color: #787878;
-		font-weight: 400;
+		font-weight: 500;
 	}
 
 	em, i {
@@ -135,7 +135,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #787878;
+		color: #83b692;
 		font-weight: 400;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -2551,6 +2551,20 @@ input, select, textarea {
 			cursor: default;
 		}
 
+    .work-logo {
+    }
+
+    .work-logo img {
+      display: block;
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .work-info {
+      width: 80%;
+      padding: 0 0 0 1rem;
+    }
 /* Work Item */
 
 	.work-item {
