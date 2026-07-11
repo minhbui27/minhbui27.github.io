@@ -2790,7 +2790,6 @@ input, select, textarea {
 		border-radius: 0.35em;
 		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 		overflow: hidden;
-		padding-bottom: 3em;
 	}
 
 		.poptrox-popup .loader {
@@ -2827,17 +2826,23 @@ input, select, textarea {
 			}
 
 		.poptrox-popup .caption {
-			background: #fff;
+			background: rgba(44, 44, 44, 0.75);
 			bottom: 0;
+			color: #fff;
 			cursor: default;
-			font-size: 0.9em;
-			height: 3em;
+			font-size: 0.8em;
+			height: 2.25em;
 			left: 0;
-			line-height: 2.8em;
+			line-height: 2.25em;
 			position: absolute;
 			text-align: center;
 			width: 100%;
 			z-index: 1;
+		}
+
+		/* No caption -> no caption bar at all. */
+		.poptrox-popup .caption:empty {
+			display: none !important;
 		}
 
 		.poptrox-popup .nav-next,
@@ -3231,5 +3236,128 @@ input, select, textarea {
 				margin-left: 0;
 				padding-left: 0;
 			}
+
+	}
+
+/* Navigation Tabs */
+
+	#tabs {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		border-bottom: solid 2px #efefef;
+		margin: 0 0 2em 0;
+	}
+
+		#tabs a {
+			border-bottom: solid 2px transparent;
+			color: #787878;
+			font-size: 0.9em;
+			font-weight: 400;
+			letter-spacing: 0.1em;
+			margin: 0 0 -2px 0;
+			padding: 0.5em 1.25em;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		#tabs a:hover {
+			color: #49bf9d;
+		}
+
+		#tabs a.active {
+			border-bottom-color: #49bf9d;
+			color: #49bf9d;
+		}
+
+	@media screen and (max-width: 480px) {
+
+		#tabs a {
+			padding: 0.5em 0.75em;
+		}
+
+	}
+
+/* Tab Panes */
+
+	.tab-pane {
+		display: none;
+	}
+
+		.tab-pane.active {
+			display: block;
+		}
+
+/* Instagram-style Photo Grid */
+
+	#gallery-years .gallery-year {
+		margin: 0 0 0.75em 0;
+	}
+
+	#gallery-years .insta-grid {
+		margin: 0 0 2.5em 0;
+	}
+
+	.insta-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 4px;
+	}
+
+		.insta-grid .work-item {
+			margin: 0;
+			min-width: 0;
+		}
+
+		.insta-grid .work-item h3 {
+			display: none;
+		}
+
+		.insta-grid .image.thumb {
+			border-radius: 0;
+			display: block;
+			margin: 0;
+			overflow: hidden;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+		}
+
+			.insta-grid .image.thumb:before {
+				border-radius: 0;
+				z-index: 1;
+			}
+
+			.insta-grid .image.thumb img {
+				border-radius: 0;
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+				-moz-transition: -moz-transform 0.2s ease-in-out;
+				-webkit-transition: -webkit-transform 0.2s ease-in-out;
+				-ms-transition: -ms-transform 0.2s ease-in-out;
+				transition: transform 0.2s ease-in-out;
+			}
+
+			.insta-grid .image.thumb:hover img {
+				-moz-transform: scale(1.04);
+				-webkit-transform: scale(1.04);
+				-ms-transform: scale(1.04);
+				transform: scale(1.04);
+			}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		.insta-grid .image.thumb img {
+			transition: none;
+		}
+
+		.insta-grid .image.thumb:hover img {
+			transform: none;
+		}
 
 	}

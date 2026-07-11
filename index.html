@@ -18,15 +18,24 @@
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-          <h1><strong>Minh Bui</strong> <br/> 
-          <strong>PhD ECE @ UVA</strong><br />
+          <h1><strong>Minh Bui</strong> <br/>
+          <strong>PhD ECE @ UVA</strong></h1>
 				</div>
 			</header>
 
 		<!-- Main -->
 			<div id="main">
 
-        
+				<!-- Navigation tabs -->
+				<nav id="tabs">
+					<a href="#home" class="active" data-tab="tab-home">Home</a>
+					<a href="#blog" data-tab="tab-blog">Blog</a>
+					<a href="#gallery" data-tab="tab-gallery">Photo Gallery</a>
+				</nav>
+
+				<!-- Home tab -->
+				<div id="tab-home" class="tab-pane active">
+
 				<!-- One -->
 					<section id="one">
 						<header class="major">
@@ -36,7 +45,7 @@
 
             <p>Some personal bio: I was orginally born in Hồ Chí Minh city, Việt Nam. I moved to California when I was 16. My English is not perfect, but I've gotten much better with time. Some of my hobbies includes pottery, climbing, gaming, guitar, bowling, film photography, and learning Japanese (B1-ish level currently). On the technical end, I'm interested in enabling more efficient compute by means that are generally considered wacky, semiconductor materials & physics, and trading. </p>
 
-            <p>Before starting a PhD, I was advised by Prof. Balkind at UCSB for some of my undergrad, and my MS in ECE. My MS thesis is called "A RISC-V Implementation of The Sharing Architecture". Concisely, it was about enabling resource sharing between physical CPU cores to enable a more flexible organization depending on workload demand.
+            <p>Before starting a PhD, I was advised by Prof. Balkind at UCSB for some of my undergrad, and my MS in ECE. My MS thesis is called "A RISC-V Implementation of The Sharing Architecture". Concisely, it was about enabling resource sharing between physical CPU cores to enable a more flexible organization depending on workload demand.</p>
 					</section>
 
         <!-- Education     -->
@@ -75,7 +84,8 @@
               Conferred June 2024 <br/>
               Santa Barbara, California, USA
             </div>
-            
+            </div>
+
           </section>
         <!-- Experience     -->
           <section id="exp">
@@ -142,7 +152,8 @@
             Nazerke Turtayeva (UC Santa Barbara); Guillem López-Paradís (BSC & UPC); Katie Lim (University of Washington); Brian Li (UC Santa Barbara); Joan Farrés (Universitat Politècnica de Catalunya); Tianrui Wei (UC Berkeley); Zechen Ma, Minh Bui, Michael Kong, Torin Schlunk, Michael Cheng, Jonathan Balkind (UC Santa Barbara) <br/>
               <br/>
               My role in this project was the implement a key-value store hardware accelerator based on <a href="https://dl.acm.org/doi/10.1145/3620665.3640402">METAL</a>, and ensure correct function as a tile in <a href="https://parallel.princeton.edu/openpiton/">OpenPiton</a>.
-          </div> 
+          </div>
+          </div>
           </section>
 
         <!-- Projects     -->
@@ -182,6 +193,39 @@
 						</div>
 					</section>
 
+				</div>
+
+				<!-- Blog tab -->
+				<div id="tab-blog" class="tab-pane">
+					<section id="blog">
+						<h2>Blog</h2>
+						<p>From time to time I write small blogs/rants. The full collection lives on my <a href="https://cake-penguin-90f.notion.site/Some-tidbits-of-blogging-1fb1db89705880528f42ea0fa4269d3c">Notion blog</a>.</p>
+						<ul>
+							<li><a href="https://cake-penguin-90f.notion.site/Some-tidbits-of-blogging-1fb1db89705880528f42ea0fa4269d3c">Some tidbits of blogging</a> - the whole collection</li>
+							<!-- Add more posts like this:
+							<li><a href="POST_URL">Post title</a> - one-line description</li>
+							-->
+						</ul>
+					</section>
+				</div>
+
+				<!-- Photo Gallery tab -->
+				<div id="tab-gallery" class="tab-pane">
+					<section id="two">
+						<h2>Photo Gallery</h2>
+						<p>Click a photo to view it full size.</p>
+						<!--
+							Year grids are built automatically by assets/js/gallery.js.
+							To add a photo: drop imgN.jpg into images/<year>/ (jpg, jpeg,
+							png, webp, or gif) AND add a line "N,caption" to that folder's
+							captions.csv. Leave the caption empty ("N,") for no caption.
+							The csv lists every photo; photos are shown in numerical order
+							and gaps in the numbering are fine.
+						-->
+						<div id="gallery-years"></div>
+					</section>
+				</div>
+
 			</div>
 
 		<!-- Footer -->
@@ -190,7 +234,7 @@
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/minh-bui-443a51203/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 						<li><a href="https://github.com/minhbui27" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:minhbui@ucsb.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto:afk7wg@virginia.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						<li><a href="https://www.instagram.com/bminh.2709/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 					</ul>
 					<ul class="copyright">
@@ -206,6 +250,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/gallery.js"></script>
+			<script>
+				(function() {
+					var links = document.querySelectorAll('#tabs a');
+					var panes = document.querySelectorAll('.tab-pane');
+
+					function activate(hash) {
+						var link = document.querySelector('#tabs a[href="' + hash + '"]') ||
+							document.querySelector('#tabs a[href="#home"]');
+						var pane = document.getElementById(link.getAttribute('data-tab'));
+						links.forEach(function(a) { a.classList.toggle('active', a === link); });
+						panes.forEach(function(p) { p.classList.toggle('active', p === pane); });
+					}
+
+					window.addEventListener('hashchange', function() {
+						activate(location.hash);
+					});
+
+					activate(location.hash || '#home');
+				})();
+			</script>
 
 	</body>
 </html>
