@@ -213,16 +213,29 @@
 				<div id="tab-gallery" class="tab-pane">
 					<section id="two">
 						<h2>Photo Gallery</h2>
+            <p>I used to put these things on instagram, but I try to not use it nowadays, so here are a selective few images that I think reflect the memories i recollect when thinking about each time period.</p>
 						<p>Click a photo to view it full size.</p>
 						<!--
-							Year grids are built automatically by assets/js/gallery.js.
-							To add a photo: drop imgN.jpg into images/<year>/ (jpg, jpeg,
-							png, webp, or gif) AND add a line "N,caption" to that folder's
+							Each <div class="insta-grid" data-folder="..."> below is filled
+							by assets/js/gallery.js with the photos of that folder. Add as
+							many as you like, with any HTML around them.
+							To add a photo: drop imgN.jpg into the folder (jpg, jpeg, png,
+							webp, or gif) AND add a line "N,caption" to that folder's
 							captions.csv. Leave the caption empty ("N,") for no caption.
-							The csv lists every photo; photos are shown in numerical order
-							and gaps in the numbering are fine.
+							Photos show in numerical order; gaps in the numbering are fine.
+							Then run ./compress-images.sh.
 						-->
-						<div id="gallery-years"></div>
+						<h2 class="gallery-year">2024-2026 Santa Barbara</h2>
+            <p>I started taking more pictures from 2024 onwards, heres a collection of them from this beautiful period of time</p>
+						<div class="insta-grid" data-folder="images/ucsb"></div>
+
+						<h2 class="gallery-year">2025 - Japan</h2>
+            <p>I was in Japan for ISCA 2025</p>
+						<div class="insta-grid" data-folder="images/2025-Japan"></div>
+
+						<h2 class="gallery-year">2025 - Austin, Texas</h2>
+            <p>I lived in Austin TX for 9 months from Jan to Sep, while I was at AMD</p>
+						<div class="insta-grid" data-folder="images/2025-TX"></div>
 					</section>
 				</div>
 

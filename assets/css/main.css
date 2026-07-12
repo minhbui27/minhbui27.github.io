@@ -2826,6 +2826,9 @@ input, select, textarea {
 			}
 
 		.poptrox-popup .caption {
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 			background: rgba(44, 44, 44, 0.75);
 			bottom: 0;
 			color: #fff;
@@ -2834,8 +2837,9 @@ input, select, textarea {
 			height: 2.25em;
 			left: 0;
 			line-height: 2.25em;
+			padding: 0 1.25em;
 			position: absolute;
-			text-align: center;
+			text-align: left;
 			width: 100%;
 			z-index: 1;
 		}
@@ -3295,18 +3299,24 @@ input, select, textarea {
 
 /* Instagram-style Photo Grid */
 
-	#gallery-years .gallery-year {
+	.gallery-year {
 		margin: 0 0 0.75em 0;
-	}
-
-	#gallery-years .insta-grid {
-		margin: 0 0 2.5em 0;
 	}
 
 	.insta-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 4px;
+		margin: 0 0 2.5em 0;
+	}
+
+	/* Tiles get too tiny at 4-up on phones; drop back to 3. */
+	@media screen and (max-width: 736px) {
+
+		.insta-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
 	}
 
 		.insta-grid .work-item {
