@@ -29,7 +29,7 @@
 				<!-- Navigation tabs -->
 				<nav id="tabs">
 					<a href="#home" class="active" data-tab="tab-home">Home</a>
-					<a href="#blog" data-tab="tab-blog">Blog</a>
+					<a href="/blog/">Blog</a>
 					<a href="#gallery" data-tab="tab-gallery">Photo Gallery</a>
 				</nav>
 
@@ -43,7 +43,7 @@
 						</header>
 						<p>My name is Minh. As of 2027, I'm a first year PhD student at the RLPVLSI group at the University of Virginia. Advised by Prof. Calhoun, my current interests are high performance, robust and low-power circuits, architectures, and systems. </p>
 
-            <p>Some personal bio: I was orginally born in Hồ Chí Minh city, Việt Nam. I moved to California when I was 16. My English is not perfect, but I've gotten much better with time. Some of my hobbies includes pottery, climbing, gaming, guitar, bowling, film photography, and learning Japanese (B1-ish level currently). On the technical end, I'm interested in enabling more efficient compute by means that are generally considered wacky, semiconductor materials & physics, and trading. </p>
+            <p>Some personal bio: I was orginally born in Hồ Chí Minh city, Việt Nam. I moved to California when I was 16. My English is not perfect, but I've gotten much better with time. Some of my hobbies includes pottery, climbing, guitar, photography, and learning Japanese (B1-ish level currently). On the technical end, I'm interested in enabling more efficient compute by means that are generally considered wacky, semiconductor materials & physics, and trading. </p>
 
             <p>Before starting a PhD, I was advised by Prof. Balkind at UCSB for some of my undergrad, and my MS in ECE. My MS thesis is called "A RISC-V Implementation of The Sharing Architecture". Concisely, it was about enabling resource sharing between physical CPU cores to enable a more flexible organization depending on workload demand.</p>
 					</section>
@@ -195,20 +195,6 @@
 
 				</div>
 
-				<!-- Blog tab -->
-				<div id="tab-blog" class="tab-pane">
-					<section id="blog">
-						<h2>Blog</h2>
-						<p>From time to time I write small blogs/rants. The full collection lives on my <a href="https://cake-penguin-90f.notion.site/Some-tidbits-of-blogging-1fb1db89705880528f42ea0fa4269d3c">Notion blog</a>.</p>
-						<ul>
-							<li><a href="https://cake-penguin-90f.notion.site/Some-tidbits-of-blogging-1fb1db89705880528f42ea0fa4269d3c">Some tidbits of blogging</a> - the whole collection</li>
-							<!-- Add more posts like this:
-							<li><a href="POST_URL">Post title</a> - one-line description</li>
-							-->
-						</ul>
-					</section>
-				</div>
-
 				<!-- Photo Gallery tab -->
 				<div id="tab-gallery" class="tab-pane">
 					<section id="two">
@@ -266,11 +252,11 @@
 			<script src="assets/js/gallery.js"></script>
 			<script>
 				(function() {
-					var links = document.querySelectorAll('#tabs a');
+					var links = document.querySelectorAll('#tabs a[data-tab]');
 					var panes = document.querySelectorAll('.tab-pane');
 
 					function activate(hash) {
-						var link = document.querySelector('#tabs a[href="' + hash + '"]') ||
+						var link = document.querySelector('#tabs a[data-tab][href="' + hash + '"]') ||
 							document.querySelector('#tabs a[href="#home"]');
 						var pane = document.getElementById(link.getAttribute('data-tab'));
 						links.forEach(function(a) { a.classList.toggle('active', a === link); });

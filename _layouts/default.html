@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+		{% seo title=false %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/blog.css" />
+		<link rel="icon" href="/images/thumbs/mondrian.jpeg" type="image/x-icon">
+	</head>
+	<body>
+		<div class="blog-wrap">
+			<header class="blog-header">
+				<a class="blog-name" href="/">Minh Bui</a>
+				<nav>
+					<a href="/">Home</a>
+					<a href="/blog/">Blog</a>
+					<a href="/#gallery">Photo Gallery</a>
+				</nav>
+			</header>
+
+			{{ content }}
+
+			<footer class="blog-footer">
+				&copy; Minh Bui
+			</footer>
+		</div>
+	</body>
+</html>

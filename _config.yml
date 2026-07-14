@@ -1,0 +1,27 @@
+# Jekyll config - GitHub Pages runs Jekyll automatically on push.
+# Only files with a leading "---" frontmatter block are processed;
+# index.html and everything else static is copied through untouched.
+
+title: Minh Bui
+description: Technical blog - computer architecture, VLSI, and circuits.
+url: "https://minhbui27.github.io"
+
+markdown: kramdown
+highlighter: rouge
+
+# Post URLs: /blog/2026/my-post-title/
+permalink: /blog/:year/:title/
+
+plugins:
+  - jekyll-feed      # generates /feed.xml
+  - jekyll-sitemap   # generates /sitemap.xml for search engines
+  - jekyll-seo-tag   # meta description + social preview tags
+
+# Local tooling and licenses - keep them out of the built site.
+exclude:
+  - serve.py
+  - compress-images.sh
+  - README.md
+  - README.txt
+  - LICENSE.txt
+  - vendor

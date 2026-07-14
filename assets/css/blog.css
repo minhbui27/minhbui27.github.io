@@ -1,0 +1,105 @@
+/* Blog pages - layered on top of main.css (Strata). */
+
+	.blog-wrap {
+		margin: 0 auto;
+		max-width: 44em;
+		padding: 3em 1.5em;
+	}
+
+	.blog-header {
+		align-items: baseline;
+		border-bottom: solid 2px #efefef;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 0 2.5em 0;
+		padding: 0 0 1em 0;
+	}
+
+		.blog-header .blog-name {
+			border-bottom: none;
+			color: #646464;
+			font-size: 1.25em;
+			font-weight: 600;
+		}
+
+		.blog-header nav a {
+			border-bottom: none;
+			color: #787878;
+			font-size: 0.9em;
+			letter-spacing: 0.1em;
+			margin-left: 1.5em;
+			text-transform: uppercase;
+		}
+
+		.blog-header nav a:hover {
+			color: #49bf9d;
+		}
+
+	.blog-post header h1 {
+		font-size: 1.75em;
+		line-height: 1.3em;
+		margin: 0 0 0.25em 0;
+	}
+
+	.post-date {
+		color: #b2b2b2;
+		font-size: 0.9em;
+	}
+
+	.blog-post img {
+		border-radius: 0.35em;
+		display: block;
+		margin: 2em auto;
+		max-width: 100%;
+	}
+
+	.blog-post h2 {
+		margin-top: 1.75em;
+	}
+
+	.blog-post h3 {
+		margin-top: 1.5em;
+	}
+
+	.post-list {
+		list-style: none;
+		padding: 0;
+	}
+
+		.post-list li {
+			margin: 0 0 0.75em 0;
+			padding: 0;
+		}
+
+		.post-list .post-date {
+			display: inline-block;
+			font-family: monospace;
+			margin-right: 1em;
+		}
+
+	.post-backlink {
+		margin-top: 3em;
+	}
+
+	.blog-footer {
+		border-top: solid 2px #efefef;
+		color: #b2b2b2;
+		font-size: 0.9em;
+		margin-top: 4em;
+		padding-top: 1em;
+	}
+
+/* Syntax highlighting (Rouge) - light theme to match the site. */
+
+	.highlight .c, .highlight .c1, .highlight .cm { color: #998; font-style: italic; }
+	.highlight .k, .highlight .kd, .highlight .kn, .highlight .kr, .highlight .kt { color: #445588; font-weight: 600; }
+	.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb { color: #b84a62; }
+	.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mb { color: #0086b3; }
+	.highlight .nf, .highlight .nc, .highlight .nn { color: #795da3; }
+	.highlight .o, .highlight .ow { color: #a71d5d; }
+	.highlight .nb, .highlight .bp { color: #0086b3; }
+	.highlight .nv, .highlight .vi, .highlight .vg { color: #008080; }
+	.highlight .gh, .highlight .gu { color: #999; font-weight: 600; }
+	.highlight .gd { color: #000; background-color: #fdd; }
+	.highlight .gi { color: #000; background-color: #dfd; }
